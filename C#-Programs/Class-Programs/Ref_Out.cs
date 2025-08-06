@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class_Programs
 {
-    internal class Class1
+    internal class Constructor
     {
         public static void Swap1(ref int a, ref int b)
         {
