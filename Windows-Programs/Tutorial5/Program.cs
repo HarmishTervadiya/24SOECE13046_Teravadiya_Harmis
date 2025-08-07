@@ -16,7 +16,7 @@ namespace Tutorial5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new P3());
+            Application.Run(new P1());
         }
     }
 }
