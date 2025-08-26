@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace First_Desktop_App
+namespace ToDoListApp
 {
     internal static class Program
     {
