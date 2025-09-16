@@ -1,6 +1,6 @@
 ﻿namespace Tutorial9
 {
-    partial class Form1
+    partial class P1
     {
         /// <summary>
         /// Required designer variable.
@@ -152,6 +152,7 @@
             this.View_BTN.TabIndex = 10;
             this.View_BTN.Text = "View";
             this.View_BTN.UseVisualStyleBackColor = true;
+            this.View_BTN.Click += new System.EventHandler(this.View_BTN_Click);
             // 
             // Insert_BTN
             // 

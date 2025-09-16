@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Tutorial9
 {
-    public partial class Form1 : Form
+    public partial class P1 : Form
     {
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\24SOECE13046_Harmis_Teravadiya\\Windows-Programs\\Tutorial9\\Database1.mdf;Integrated Security=True";
 
 
-        public Form1()
+        public P1()
         {
             InitializeComponent();
         }
@@ -86,7 +86,7 @@ namespace Tutorial9
             cmd.Parameters.AddWithValue("@course", textBox2.Text);
             cmd.Parameters.AddWithValue("@dob", textBox3.Text);
             cmd.Parameters.AddWithValue("@address", textBox4.Text);
-                cmd.Parameters.AddWithValue("@mob", Convert.ToInt32(textBox5.Text));
+            cmd.Parameters.AddWithValue("@mob", Convert.ToInt32(textBox5.Text));
             cmd.Parameters.AddWithValue("@id", dataGridView1.SelectedCells[0].Value);
 
             cmd.ExecuteNonQuery();
@@ -101,7 +101,34 @@ namespace Tutorial9
 
         private void Find_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
 
+            string query = "SELECT * FROM Table1 WHERE name LIKE @name";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+
+            adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + textBox1.Text + "%");
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            con.Close();
+        }
+
+        private void View_BTN_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            string query = "SELECT * FROM Table1";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            con.Close();
         }
     }
 }
