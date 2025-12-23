@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>/Images/5823206.jpg</ImageUrl>
+		<NavigateUrl>https://www.linkedin.com/feed/</NavigateUrl>
+		<Impression>2</Impression>
+		<Keywords>Career, jobs, profiles</Keywords>
+	</Ad>
+	<Ad>
+		<ImageUrl>/Images/5825154.jpg</ImageUrl>
+		<NavigateUrl>https://www.linkedin.com/feed/</NavigateUrl>
+		<Impression>2</Impression>
+		<Keywords>Career, jobs, profiles</Keywords>
+	</Ad>
+	<Ad>
+		<ImageUrl>/Images/5825628.jpg</ImageUrl>
+		<NavigateUrl>https://www.linkedin.com/feed/</NavigateUrl>
+		<Impression>2</Impression>
+		<Keywords>Career, jobs, profiles</Keywords>
+	</Ad>
+</Advertisements>

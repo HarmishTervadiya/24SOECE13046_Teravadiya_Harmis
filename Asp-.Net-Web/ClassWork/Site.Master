@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ClassWork.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="bg-slate-900 text-white px-6 py-4 shadow-lg">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <div class="text-2xl font-bold tracking-tight">
+      <a href="#" class="hover:text-blue-400 transition-colors">24SOECE13046_Harmis_Teravadiya</a>
+    </div>
+
+    <div class="flex items-center space-x-8">
+      <a href="#" class="font-medium hover:text-blue-400 transition-colors">Home</a>
+      
+      <div class="relative group">
+        <button class="flex items-center space-x-1 font-medium hover:text-blue-400 transition-colors py-2">
+          <span>Tutorials</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+          </svg>
+        </button>
+
+        <div class="absolute left-0 w-48 mt-0 origin-top-left bg-white text-slate-800 rounded-md shadow-xl 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <div class="py-2">
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 1</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 2</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 3</a>
+          </div>
+        </div>
+      </div>
+
+        <div class="relative group">
+  <button class="flex items-center space-x-1 font-medium hover:text-blue-400 transition-colors py-2">
+    <span>Lab Work</span>
+    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+    </svg>
+  </button>
+
+  <div class="absolute left-0 w-48 mt-0 origin-top-left bg-white text-slate-800 rounded-md shadow-xl 
+              opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+    <div class="py-2">
+      <a href="\LabWork\AdRotator" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">AdRotator</a>
+      <a href="\LabWork\Calender" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Calender</a>
+    </div>
+  </div>
+</div>
+    </div>
+
+  </div>
+        </nav>
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
