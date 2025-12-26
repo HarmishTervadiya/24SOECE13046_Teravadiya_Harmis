@@ -76,6 +76,9 @@
     <div class="py-2">
       <a href="\LabWork\AdRotator" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">AdRotator</a>
       <a href="\LabWork\Calender" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Calender</a>
+      <a href="\LabWork\FileUpload" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">File Upload</a>
+      <a href="\LabWork\MultiView" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">MultiView</a>
+    
     </div>
   </div>
 </div>

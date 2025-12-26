@@ -17,7 +17,10 @@ public partial class _Default : System.Web.UI.Page
 
     protected void login_Click(object sender, EventArgs e)
     {
-        Session["User"] =TextBox1.Text;
-        Response.Redirect("Home.aspx");
+        if (TextBox1.Text != "")
+        {
+            Session["User"] = TextBox1.Text;
+            Response.Redirect("Home.aspx");
+        }
     }
 }
