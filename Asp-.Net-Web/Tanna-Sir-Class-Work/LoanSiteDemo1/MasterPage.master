@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <!-- <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder> -->
+    <style type="text/css">
+        .auto-style2 {
+            height: 102px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+          <table border="1" cellpadding="10" cellspacing="0">
+
+            <tr>
+                <td colspan="5" class="auto-style2">
+                    <h1>HDFC Loans - Next Step to Dreams</h1>
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <asp:Label ID="Label1" runat="server" Text="Logged In User"></asp:Label>
+                    &nbsp;&nbsp;
+                </td>
+                <td>
+                    <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="logout_Click" />
+                </td>
+            </tr>
+
+            <tr>
+                <td><asp:LinkButton ID="Home" runat="server" OnClick="Home_Click">Home</asp:LinkButton></td>
+                <td><asp:LinkButton ID="New" runat="server" OnClick="New_Click">New Application</asp:LinkButton></td>
+                <td><asp:LinkButton ID="Update" runat="server" OnClick="Update_Click">Update Application</asp:LinkButton></td>
+                <td><asp:LinkButton ID="Remove" runat="server" OnClick="Remove_Click">Remove Application</asp:LinkButton></td>
+                <td><asp:LinkButton ID="View" runat="server" OnClick="View_Click">View All</asp:LinkButton></td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <h2>Contact Us</h2>
+                    <p>HDFC Loan Service</p>
+                    <p>Mumbai, Maharashtra, India</p>
+                    <hr />
+                </td>
+            </tr>
+
+        </table>           
+       
+    </form>
+</body>
+</html>
