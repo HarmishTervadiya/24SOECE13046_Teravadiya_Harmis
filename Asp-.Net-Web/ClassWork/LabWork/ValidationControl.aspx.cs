@@ -18,5 +18,18 @@ namespace ClassWork.LabWork
         {
 
         }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            int num;
+            if (int.TryParse(args.Value, out num) && num % 2==0)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
     }
 }
