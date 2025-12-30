@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ClassWork.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
@@ -14,92 +13,91 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+
+<body class="bg-gray-100 text-slate-800">
     <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
+        <asp:ScriptManager runat="server" />
 
-        <nav class="bg-slate-900 text-white px-6 py-4 shadow-lg">
-            <div class="max-w-7xl mx-auto flex justify-between items-center">
-    
-    <div class="text-2xl font-bold tracking-tight">
-      <a href="#" class="hover:text-blue-400 transition-colors">24SOECE13046_Harmis_Teravadiya</a>
-    </div>
+        <nav class="bg-slate-900 text-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-    <div class="flex items-center space-x-8">
-      <a href="#" class="font-medium hover:text-blue-400 transition-colors">Home</a>
-      
-      <div class="relative group">
-        <button class="flex items-center space-x-1 font-medium hover:text-blue-400 transition-colors py-2">
-          <span>Tutorials</span>
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-          </svg>
-        </button>
+                <div class="text-xl font-bold tracking-wide">
+                    <a href="#" class="hover:text-blue-400 transition">
+                        24SOECE13046_Harmis_Teravadiya
+                    </a>
+                </div>
 
-        <div class="absolute left-0 w-48 mt-0 origin-top-left bg-white text-slate-800 rounded-md shadow-xl 
-                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-          <div class="py-2">
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 1</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 2</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 3</a>
-          </div>
-        </div>
-      </div>
+                <div class="flex items-center space-x-8">
 
-        <div class="relative group">
-  <button class="flex items-center space-x-1 font-medium hover:text-blue-400 transition-colors py-2">
-    <span>Lab Work</span>
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-    </svg>
-  </button>
+                    <a href="#" class="font-medium hover:text-blue-400 transition">
+                        Home
+                    </a>
+                    
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 font-medium py-2 hover:text-blue-400 transition">
+                            Tutorials
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                        </button>
 
-  <div class="absolute left-0 w-48 mt-0 origin-top-left bg-white text-slate-800 rounded-md shadow-xl 
-              opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-    <div class="py-2">
-      <a href="\LabWork\AdRotator" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">AdRotator</a>
-      <a href="\LabWork\Calender" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Calender</a>
-      <a href="\LabWork\FileUpload" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">File Upload</a>
-      <a href="\LabWork\MultiView" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">MultiView</a>
-      <a href="\LabWork\ValidationControl" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Validator Control</a>
-    
-    </div>
-  </div>
-</div>
-    </div>
+                        <div class="absolute left-0 mt-2 w-48 bg-white text-slate-800 rounded-lg shadow-xl 
+                                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2 space-y-1">
+                                <div class="relative group">
+                                    <a class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 flex justify-between items-center">Tutorial 1
+                                        <svg class="w-3 h-3 ml-2 fill-current" viewBox="0 0 20 20">
+                                            <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
+                                        </svg>
+                                    </a>
+                                    <div class="absolute left-full top-0 ml-1 w-48 bg-white text-slate-800 rounded-lg shadow-xl
+                                                opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                        <a href="/Tutorials/Tutorial1/Q1.aspx" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Q1 - Welcome</a>
+                                        <a href="/Tutorials/Tutorial1/Q2.aspx" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Q2 - Temperature</a>
+                                        <a href="/Tutorials/Tutorial1/Q3.aspx" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Q3 - Operations</a>
+                                        <a href="/Tutorials/Tutorial1/Q4.aspx" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Q4 - AutoPostBack</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 2</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Tutorial 3</a>
+                            </div>
+                        </div>
+                    </div>
 
-  </div>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 font-medium py-2 hover:text-blue-400 transition">
+                            Lab Work
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                        </button>
+
+                        <div class="absolute left-0 mt-2 w-52 bg-white text-slate-800 rounded-lg shadow-xl 
+                                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <a href="\LabWork\AdRotator" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">AdRotator</a>
+                                <a href="\LabWork\Calender" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Calendar</a>
+                                <a href="\LabWork\FileUpload" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">File Upload</a>
+                                <a href="\LabWork\MultiView" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">MultiView</a>
+                                <a href="\LabWork\ValidationControl" class="block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600">Validator Control</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </nav>
 
+        <main class="max-w-7xl mx-auto px-6 py-10 min-h-screen">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
 
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
-        </div>
+        <footer class="bg-white border-t">
+            <div class="max-w-7xl mx-auto px-6 py-4 text-center text-sm text-gray-600">
+                &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
+            </div>
+        </footer>
+
     </form>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
 </body>
 </html>
