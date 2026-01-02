@@ -11,7 +11,7 @@ namespace ClassWork.LabWork
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LabelQuery.Text= Request.QueryString["data"];
         }
 
         protected void HiddenField2_ValueChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace ClassWork.LabWork
 
         protected void Buttonquery_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/LabWork/ClientSideValidation.aspx?data=" + TextBox3.Text);
         }
     }
 }
