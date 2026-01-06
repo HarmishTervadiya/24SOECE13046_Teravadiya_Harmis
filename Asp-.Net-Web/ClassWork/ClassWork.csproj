@@ -100,6 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -127,6 +131,7 @@
     <Content Include="LabWork\AdRotator.aspx" />
     <Content Include="LabWork\Calender.aspx" />
     <Content Include="LabWork\FileUpload.aspx" />
+    <Content Include="LabWork\Login.aspx" />
     <Content Include="LabWork\MultiView.aspx" />
     <Content Include="LabWork\ValidationControl.aspx" />
     <Content Include="LabWork\AutoPostBack.aspx" />
@@ -246,6 +251,13 @@
     <Compile Include="LabWork\FileUpload.aspx.designer.cs">
       <DependentUpon>FileUpload.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LabWork\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabWork\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LabWork\MultiView.aspx.cs">
       <DependentUpon>MultiView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,7 +338,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>

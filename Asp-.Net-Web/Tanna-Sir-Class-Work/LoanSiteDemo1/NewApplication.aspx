@@ -41,7 +41,7 @@
         
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="submit" runat="server" Text="Submit Application" />
+            <asp:Button ID="submit" runat="server" Text="Submit Application" OnClick="submit_Click" />
         </p>
         
 </asp:Content>
