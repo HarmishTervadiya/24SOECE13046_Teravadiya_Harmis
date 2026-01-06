@@ -35,11 +35,11 @@
             </tr>
 
             <tr>
-                <td><asp:LinkButton ID="Home" runat="server" OnClick="Home_Click">Home</asp:LinkButton></td>
-                <td><asp:LinkButton ID="New" runat="server" OnClick="New_Click">New Application</asp:LinkButton></td>
-                <td><asp:LinkButton ID="Update" runat="server" OnClick="Update_Click">Update Application</asp:LinkButton></td>
-                <td><asp:LinkButton ID="Remove" runat="server" OnClick="Remove_Click">Remove Application</asp:LinkButton></td>
-                <td><asp:LinkButton ID="View" runat="server" OnClick="View_Click">View All</asp:LinkButton></td>
+                <td><asp:LinkButton ID="Home" runat="server" OnClick="Home_Click" CausesValidation="False">Home</asp:LinkButton></td>
+                <td><asp:LinkButton ID="New" runat="server" OnClick="New_Click" CausesValidation="False">New Application</asp:LinkButton></td>
+                <td><asp:LinkButton ID="Update" runat="server" OnClick="Update_Click" CausesValidation="False">Update Application</asp:LinkButton></td>
+                <td><asp:LinkButton ID="Remove" runat="server" OnClick="Remove_Click" CausesValidation="False">Remove Application</asp:LinkButton></td>
+                <td><asp:LinkButton ID="View" runat="server" OnClick="View_Click" CausesValidation="False">View All</asp:LinkButton></td>
             </tr>
 
             <tr>
