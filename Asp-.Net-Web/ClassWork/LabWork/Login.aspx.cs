@@ -28,12 +28,13 @@ namespace ClassWork.LabWork
 
             if (dataReader.Read())
             {
-                Session["name"] = TextBox1.Text;
+                Session["username"] = TextBox1.Text;
+
+
+                HttpCookie usercookie = new HttpCookie("local");
+                usercookie["usernmae"] = TextBox1.Text;
 
                 Response.Redirect("FileUpload.aspx");
-
-                //HttpCookie usercookie = new HttpCookie();
-                //usercookie['usernmae'] = TextBox1.Text;
             }
             else
             {
