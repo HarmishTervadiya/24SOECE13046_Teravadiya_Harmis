@@ -62,4 +62,26 @@ public partial class _Default : System.Web.UI.Page
     }
 
 
+
+    protected void TextBox1_TextChanged(object sender, EventArgs e)
+    {
+        string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\24SOECE13046_Harmis_Teravadiya\\Asp-.Net-Web\\Tanna-Sir-Class-Work\\LoanSiteDemo1\\App_Data\\Database.mdf;Integrated Security=True";
+        SqlConnection con = new SqlConnection(conString);
+        con.Open();
+
+        string query = "SELECT * FROM Account WHERE savingsActNo = @act";
+
+        SqlCommand cmd = new SqlCommand(query, con);
+        cmd.Parameters.AddWithValue("@act", TextBox1.Text);
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        if (reader.Read())
+        {
+            TextBox2.Text = reader["actHolderName"].ToString();
+           
+        }
+
+        con.Close();
+    }
 }
