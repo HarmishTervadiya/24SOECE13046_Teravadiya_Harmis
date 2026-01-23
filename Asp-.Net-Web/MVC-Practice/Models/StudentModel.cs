@@ -11,13 +11,13 @@ namespace MVC_Practice.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage ="name required")]
-        public int name { get; set; }
+        //[Required(ErrorMessage ="name required")]
+        public string name { get; set; }
         
-        [Required(ErrorMessage ="email required")]
+        //[Required(ErrorMessage ="email required")]
         public string email { get; set; }
         
-        [Required(ErrorMessage ="passowrd required")]
+        //[Required(ErrorMessage ="password required")]
         public string password { get; set; }
 
     }

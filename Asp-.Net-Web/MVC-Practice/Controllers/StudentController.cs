@@ -10,7 +10,7 @@ namespace MVC_Practice.Controllers
 {
     public class StudentController : Controller
     {
-        StudentDB db=new StudentDB();
+        StudentDB db = new StudentDB();
 
         // GET: Student
         public ActionResult addStudent()
@@ -25,11 +25,35 @@ namespace MVC_Practice.Controllers
             {
                 db.insert(s);
             }
+            else
+            {
+                Response.Write("Not valid");
+            }
 
             Response.Write("Inserted");
             return View();
         }
 
+        public ActionResult updateStudent()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult updateStudent(StudentModel s)
+        {
+
+            if (ModelState.IsValid)
+            {
+                db.update(s);
+            }
+            else
+            {
+                Response.Write("Not valid");
+            }
+
+            Response.Write("Updated");
+            return View();
+        }
     }
 }

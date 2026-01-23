@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+@model MVC_Practice.Models.StudentModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>updateStudent</title>
+</head>
+<body>
+    <div> 
+       <form method="post">
+           Email <br/>
+           @Html.TextBoxFor(obj=>obj.email) <br />
+           Name <br/>
+           @Html.TextBoxFor(obj=>obj.name) <br/>
+
+           <input type="submit" />
+       </form>
+    </div>
+</body>
+</html>
