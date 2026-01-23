@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "addStudent";
+    Layout = null;
+}
+@model MVC_Practice.Models.StudentModel
+<html>
+<head>
+
+</head>
+<body>
+    <div>
+        <h1>add student</h1>
+        <form method="post">
+            Name<br />
+            @Html.TextBoxFor(obj => obj.name, new { @class = "form-control" }) <br />
+            Email<br />
+            @Html.TextBoxFor(obj => obj.email, new { @class = "form-control" })<br />
+            Password<br />
+            @Html.TextBoxFor(obj => obj.password, new { @class = "form-control" })<br />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>
