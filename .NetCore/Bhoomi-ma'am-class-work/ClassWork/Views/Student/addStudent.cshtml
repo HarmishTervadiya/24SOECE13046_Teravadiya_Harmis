@@ -2,11 +2,21 @@
     ViewData["Title"] = "addStudent";
 }
 
+@model StudentModel
+
 <h1>addStudent</h1>
-<form action="/" method="post">
+<form  method="post">
     Student Name: <br />
-    <input type="text" name="Name" value="" />    <br />
+    <input type="text" asp-for="Name" name="Name" value="" /> <br />
+    <span asp-validation-for="Name" style="color:red"></span> <br />
+    Enrollment: <br />
+    <input type="text" asp-for="EnrollmentNo" name="EnrollmentNo" value="" /> <br />
+    <span asp-validation-for="EnrollmentNo" style="color:red"></span> <br />
+
     Branch: <br />
-    <input type="text" name="Branch" value="" /> <br />
+    <input type="text" asp-for="Branch" name="Branch" value="" />
+    <span asp-validation-for="Branch" style="color:red"></span> <br />
+    <br />
+
     <input type="submit" value="Submit" />
 </form>

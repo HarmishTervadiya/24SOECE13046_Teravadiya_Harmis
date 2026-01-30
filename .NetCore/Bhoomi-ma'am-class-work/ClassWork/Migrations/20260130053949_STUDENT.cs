@@ -16,7 +16,7 @@ namespace ClassWork.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "string", nullable: false),
                     Branch = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EnrollmentNo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
