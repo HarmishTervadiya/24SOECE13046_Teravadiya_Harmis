@@ -1,0 +1,41 @@
+@model IEnumerable<ClassWork.Models.StudentModel>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1 class="mb-4">Students</h1>
+
+<p>
+    <a asp-action="addStudent" class="btn btn-success">Add New Student</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Enrollment</th>
+            <th>Branch</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.EnrollmentNo</td>
+            <td>@item.Branch</td>
+            <td class="text-center">
+                <a asp-action="updateStudent" asp-route-id="@item.Id" class="btn btn-sm btn-primary me-2">Edit</a>
+                <form asp-action="Delete" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="@item.Id" />
+                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this student?');">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,11 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Add Student";
+    ViewData["Title"] = "Update Student";
 }
 
-@model StudentModel
+@model ClassWork.Models.StudentModel
 
-<h1 class="mb-4">Add Student</h1>
+<h1 class="mb-4">Update Student</h1>
 <form method="post" class="row g-3">
+    <input type="hidden" asp-for="Id" />
+
     <div class="col-md-6">
         <label asp-for="Name" class="form-label">Student Name</label>
         <input asp-for="Name" class="form-control" />
@@ -13,18 +15,23 @@
     </div>
 
     <div class="col-md-6">
-        <label asp-for="EnrollmentNo" class="form-label">Enrollment Number</label>
+        <label asp-for="EnrollmentNo" class="form-label">Enrollment</label>
         <input asp-for="EnrollmentNo" class="form-control" />
         <span asp-validation-for="EnrollmentNo" class="text-danger"></span>
     </div>
-    <div class="col-12">
+
+    <div class="col-md-6">
         <label asp-for="Branch" class="form-label">Branch</label>
-        <input asp-for="Branch" class="form-control" rows="3" />
+        <input asp-for="Branch" class="form-control" />
         <span asp-validation-for="Branch" class="text-danger"></span>
     </div>
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a asp-controller="Student" asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Back to List</a>
     </div>
 </form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
