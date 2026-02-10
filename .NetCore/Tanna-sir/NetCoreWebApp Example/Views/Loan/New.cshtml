@@ -1,7 +1,77 @@
-﻿
-@{
-    ViewData["Title"] = "New";
+﻿@{
+    ViewData["Title"] = "New Loan Application";
 }
 
-<h1>New</h1>
+<h2 class="text-center" style="font-weight:bold;">NEW LOAN APPLICATION</h2>
 
+<form id="loanForm" method="post" novalidate>
+    <table class="table-borderless table" style="border:1px dotted #ccc;">
+        <tr>
+            <td style="width:220px;">Saving Account No :</td>
+            <td><input type="text" id="accountNo" name="accountNo" class="form-control" style="width:250px;" /></td>
+            <td><span id="errAccountNo" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Account Holder Name :</td>
+            <td><input type="text" id="holderName" name="holderName" class="form-control" style="width:250px;" /></td>
+            <td><span id="errHolderName" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Loan Category :</td>
+            <td>
+                <select id="loanCategory" name="loanCategory" class="form-select" style="width:250px;">
+                    <option>Property Loan</option>
+                    <option>Personal Loan</option>
+                    <option selected>Education Loan</option>
+                    <option>Car Loan</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Loan Type :</td>
+            <td>
+                <select id="loanType" name="loanType" class="form-select" style="width:250px;">
+                    <option>Short Term</option>
+                    <option selected>Education Loan</option>
+                    <option>Long Term</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Loan Issue Date :</td>
+            <td><input type="date" id="issueDate" name="issueDate" class="form-control" style="width:250px;" /></td>
+            <td><span id="errIssueDate" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Loan Amount :</td>
+            <td><input type="number" id="loanAmount" name="loanAmount" class="form-control" style="width:250px;" min="50000" max="2000000" /></td>
+            <td><span id="errLoanAmount" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Current Address :</td>
+            <td><textarea id="currentAddress" name="currentAddress" class="form-control" rows="3" style="width:250px;"></textarea></td>
+            <td><span id="errCurrentAddress" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Loan Remarks :</td>
+            <td><textarea id="loanRemarks" name="loanRemarks" class="form-control" rows="2" style="width:250px;"></textarea></td>
+            <td><span id="errLoanRemarks" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" id="btnSubmit" class="btn btn-primary">Submit Application</button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div id="successMsg" class="text-success" style="font-weight:bold; margin-top:10px;"></div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</form>
