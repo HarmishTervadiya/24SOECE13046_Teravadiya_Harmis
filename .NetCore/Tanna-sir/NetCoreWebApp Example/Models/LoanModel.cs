@@ -55,5 +55,32 @@ namespace NetCoreWebApp_Example.Models
 
             return result;
         }
+
+        public bool Insert()
+        {
+            try
+            {
+                using (var con = new SqlConnection(conString))
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Loan (AccountNo, Amount, LoanType, LoanCategory, CurrentAddress, LoanRemarks) VALUES (@AccountNo, @Amount, @LoanType, @LoanCategory, @CurrentAddress, @LoanRemarks)";
+
+                    cmd.Parameters.AddWithValue("@AccountNo", AccountNo);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
+                    cmd.Parameters.AddWithValue("@LoanType", (object)LoanType ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@LoanCategory", (object)LoanCategory ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@CurrentAddress", (object)CurrentAddress ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@LoanRemarks", (object)LoanRemarks ?? string.Empty);
+
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    return rows > 0;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

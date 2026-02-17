@@ -15,6 +15,26 @@ namespace NetCoreWebApp_Example.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult New(LoanModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.Insert())
+            {
+                ViewBag.Success = "Application submitted successfully.";
+                ModelState.Clear();
+                return View();
+            }
+
+            ViewBag.Message = "Failed to submit application. Please try again later.";
+            return View(model);
+        }
+
         public IActionResult UpdateApplication()
         {
             return View();

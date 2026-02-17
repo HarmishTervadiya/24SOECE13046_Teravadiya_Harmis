@@ -1,75 +1,80 @@
-﻿@{
+﻿@model NetCoreWebApp_Example.Models.LoanModel
+@{
     ViewData["Title"] = "New Loan Application";
 }
 
 <h2 class="text-center" style="font-weight:bold;">NEW LOAN APPLICATION</h2>
 
-<form id="loanForm" method="post" novalidate>
+@if (ViewBag.Success != null)
+{
+    <div class="alert alert-success">@ViewBag.Success</div>
+}
+else if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger">@ViewBag.Message</div>
+}
+
+<form asp-action="New" method="post" novalidate>
+    @Html.AntiForgeryToken()
+
     <table class="table-borderless table" style="border:1px dotted #ccc;">
         <tr>
             <td style="width:220px;">Saving Account No :</td>
-            <td><input type="text" id="accountNo" name="accountNo" class="form-control" style="width:250px;" /></td>
-            <td><span id="errAccountNo" class="text-danger"></span></td>
-        </tr>
-        <tr>
-            <td>Account Holder Name :</td>
-            <td><input type="text" id="holderName" name="holderName" class="form-control" style="width:250px;" /></td>
-            <td><span id="errHolderName" class="text-danger"></span></td>
+            <td>
+                <input asp-for="AccountNo" class="form-control" style="width:250px;" />
+            </td>
+            <td>
+                <span class="text-danger">@Html.ValidationMessageFor(m => m.AccountNo)</span>
+            </td>
         </tr>
         <tr>
             <td>Loan Category :</td>
             <td>
-                <select id="loanCategory" name="loanCategory" class="form-select" style="width:250px;">
+                <select asp-for="LoanCategory" class="form-select" style="width:250px;">
                     <option>Property Loan</option>
                     <option>Personal Loan</option>
-                    <option selected>Education Loan</option>
+                    <option>Education Loan</option>
                     <option>Car Loan</option>
                 </select>
             </td>
-            <td></td>
+            <td><span class="text-danger">@Html.ValidationMessageFor(m => m.LoanCategory)</span></td>
         </tr>
         <tr>
             <td>Loan Type :</td>
             <td>
-                <select id="loanType" name="loanType" class="form-select" style="width:250px;">
+                <select asp-for="LoanType" class="form-select" style="width:250px;">
                     <option>Short Term</option>
-                    <option selected>Education Loan</option>
+                    <option>Education Loan</option>
                     <option>Long Term</option>
                 </select>
             </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Loan Issue Date :</td>
-            <td><input type="date" id="issueDate" name="issueDate" class="form-control" style="width:250px;" /></td>
-            <td><span id="errIssueDate" class="text-danger"></span></td>
+            <td><span class="text-danger">@Html.ValidationMessageFor(m => m.LoanType)</span></td>
         </tr>
         <tr>
             <td>Loan Amount :</td>
-            <td><input type="number" id="loanAmount" name="loanAmount" class="form-control" style="width:250px;" min="50000" max="2000000" /></td>
-            <td><span id="errLoanAmount" class="text-danger"></span></td>
+            <td>
+                <input asp-for="Amount" type="number" class="form-control" style="width:250px;" min="50000" max="2000000" />
+            </td>
+            <td><span class="text-danger">@Html.ValidationMessageFor(m => m.Amount)</span></td>
         </tr>
         <tr>
             <td>Current Address :</td>
-            <td><textarea id="currentAddress" name="currentAddress" class="form-control" rows="3" style="width:250px;"></textarea></td>
-            <td><span id="errCurrentAddress" class="text-danger"></span></td>
+            <td>
+                <textarea asp-for="CurrentAddress" class="form-control" rows="3" style="width:250px;"></textarea>
+            </td>
+            <td><span class="text-danger">@Html.ValidationMessageFor(m => m.CurrentAddress)</span></td>
         </tr>
         <tr>
             <td>Loan Remarks :</td>
-            <td><textarea id="loanRemarks" name="loanRemarks" class="form-control" rows="2" style="width:250px;"></textarea></td>
-            <td><span id="errLoanRemarks" class="text-danger"></span></td>
+            <td>
+                <textarea asp-for="LoanRemarks" class="form-control" rows="2" style="width:250px;"></textarea>
+            </td>
+            <td><span class="text-danger">@Html.ValidationMessageFor(m => m.LoanRemarks)</span></td>
         </tr>
         <tr>
             <td></td>
             <td>
                 <button type="submit" id="btnSubmit" class="btn btn-primary">Submit Application</button>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <div id="successMsg" class="text-success" style="font-weight:bold; margin-top:10px;"></div>
             </td>
             <td></td>
         </tr>
