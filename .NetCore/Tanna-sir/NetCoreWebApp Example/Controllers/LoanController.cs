@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NetCoreWebApp_Example.Models;
 
 namespace NetCoreWebApp_Example.Controllers
 {
@@ -26,7 +27,9 @@ namespace NetCoreWebApp_Example.Controllers
 
         public IActionResult ViewAll()
         {
-            return View();
+            LoanModel obj = new LoanModel();
+            List<LoanModel> loans = obj.getData();
+            return View(loans);
         }
     }
 }

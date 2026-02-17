@@ -1,7 +1,47 @@
-﻿
+﻿@model IEnumerable<NetCoreWebApp_Example.Models.LoanModel>
 @{
     ViewData["Title"] = "ViewAll";
 }
 
-<h1>ViewAll</h1>
+<h1>View All Loans</h1>
+
+<table class="table-striped table">
+    <thead>
+        <tr>
+            <th>Loan No</th>
+            <th>Account No</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Address</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model != null)
+    {
+        foreach (var loan in Model)
+        {
+            <tr>
+                <td>@loan.LoanNo</td>
+                <td>@loan.AccountNo</td>
+                <td>@loan.Amount</td>
+                <td>@loan.LoanCategory</td>
+                <td>@loan.LoanType</td>
+                <td>@loan.CurrentAddress</td>
+                <td>@loan.LoanRemarks</td>
+                <td>
+                    <a asp-controller="Loan" asp-action="UpdateApplication" asp-route-loanNo="@loan.LoanNo" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a asp-controller="Loan" asp-action="DiscardApplication" asp-route-loanNo="@loan.LoanNo" class="btn btn-sm btn-outline-secondary">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr><td colspan="8">No records found.</td></tr>
+    }
+    </tbody>
+</table>
 
