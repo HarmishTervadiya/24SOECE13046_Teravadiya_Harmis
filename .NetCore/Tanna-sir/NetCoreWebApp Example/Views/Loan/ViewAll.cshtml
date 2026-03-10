@@ -1,9 +1,16 @@
-﻿@model IEnumerable<NetCoreWebApp_Example.Models.LoanModel>
+@model IEnumerable<NetCoreWebApp_Example.Models.LoanModel>
 @{
     ViewData["Title"] = "ViewAll";
 }
 
 <h1>View All Loans</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<p><a asp-action="New" class="btn btn-primary">Create New Loan Application</a></p>
 
 <table class="table-striped table">
     <thead>

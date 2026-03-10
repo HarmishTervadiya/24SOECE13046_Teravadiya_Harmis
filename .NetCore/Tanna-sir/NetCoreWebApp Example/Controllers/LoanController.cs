@@ -7,7 +7,7 @@ namespace NetCoreWebApp_Example.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("ViewAll");
         }
 
         public IActionResult New()
@@ -25,9 +25,8 @@ namespace NetCoreWebApp_Example.Controllers
 
             if (model.Insert())
             {
-                ViewBag.Success = "Application submitted successfully.";
-                ModelState.Clear();
-                return View();
+                TempData["Success"] = "Application submitted successfully.";
+                return RedirectToAction("ViewAll");
             }
 
             ViewBag.Message = "Failed to submit application. Please try again later.";

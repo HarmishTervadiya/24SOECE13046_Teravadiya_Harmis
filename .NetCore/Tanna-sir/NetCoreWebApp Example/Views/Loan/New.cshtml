@@ -1,4 +1,4 @@
-﻿@model NetCoreWebApp_Example.Models.LoanModel
+@model NetCoreWebApp_Example.Models.LoanModel
 @{
     ViewData["Title"] = "New Loan Application";
 }
@@ -14,7 +14,7 @@ else if (ViewBag.Message != null)
     <div class="alert alert-danger">@ViewBag.Message</div>
 }
 
-<form asp-action="New" asp-controller="LoanController" method="post">
+<form asp-action="New" asp-controller="Loan" method="post">
     
     <table class="table-borderless table" style="border:1px dotted #ccc;">
         <tr>
@@ -74,6 +74,7 @@ else if (ViewBag.Message != null)
             <td></td>
             <td>
                 <button type="submit" id="btnSubmit" class="btn btn-primary">Submit Application</button>
+                <a asp-action="ViewAll" class="btn btn-secondary">Cancel</a>
             </td>
             <td></td>
         </tr>
