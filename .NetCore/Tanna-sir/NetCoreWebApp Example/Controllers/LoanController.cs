@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using NetCoreWebApp_Example.Models;
 
 namespace NetCoreWebApp_Example.Controllers
@@ -16,7 +16,6 @@ namespace NetCoreWebApp_Example.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult New(LoanModel model)
         {
             if (!ModelState.IsValid)
@@ -35,14 +34,34 @@ namespace NetCoreWebApp_Example.Controllers
             return View(model);
         }
 
-        public IActionResult UpdateApplication()
+        public IActionResult UpdateApplication(int loanNo)
         {
-            return View();
+            LoanModel obj = new LoanModel();
+            var model = obj.GetByLoanNo(loanNo);
+            if (model == null) return RedirectToAction("ViewAll");
+            return View(model);
         }
 
-        public IActionResult DiscardApplication()
+        [HttpPost]
+        public IActionResult UpdateApplication(LoanModel model)
         {
-            return View();
+            if (model.Update())
+            {
+                ViewBag.Success = "Application updated successfully.";
+                return RedirectToAction("ViewAll");
+            }
+            ViewBag.Message = "Failed to update application.";
+            return View(model);
+        }
+
+        public IActionResult DiscardApplication(int loanNo)
+        {
+            LoanModel obj = new LoanModel();
+            if (obj.Delete(loanNo))
+            {
+                return RedirectToAction("ViewAll");
+            }
+            return RedirectToAction("ViewAll");
         }
 
         public IActionResult ViewAll()

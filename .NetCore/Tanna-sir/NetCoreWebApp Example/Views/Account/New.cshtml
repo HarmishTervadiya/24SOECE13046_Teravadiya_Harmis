@@ -1,0 +1,45 @@
+@model NetCoreWebApp_Example.Models.AccountModel
+@{
+    ViewData["Title"] = "New Account";
+}
+
+<h1>New Account</h1>
+
+<form asp-action="New" method="post">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Account No:</label>
+        <div class="col-sm-10">
+            <input asp-for="savingsActNo" class="form-control" style="width:250px;" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Holder Name:</label>
+        <div class="col-sm-10">
+            <input asp-for="actHolderName" class="form-control" style="width:250px;" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Profession:</label>
+        <div class="col-sm-10">
+            <input asp-for="profession" class="form-control" style="width:250px;" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+            <input asp-for="Email" class="form-control" style="width:250px;" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Contact No:</label>
+        <div class="col-sm-10">
+            <input asp-for="ContactNo" class="form-control" style="width:250px;" />
+        </div>
+    </div>
+    <div class="form-group row mt-2">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</form>

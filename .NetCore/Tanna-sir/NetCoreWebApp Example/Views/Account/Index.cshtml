@@ -1,0 +1,36 @@
+@model IEnumerable<NetCoreWebApp_Example.Models.AccountModel>
+@{
+    ViewData["Title"] = "Accounts";
+}
+
+<h1>Account List</h1>
+<p><a asp-action="New" class="btn btn-primary">Create New Account</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account No</th>
+            <th>Holder Name</th>
+            <th>Profession</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.savingsActNo</td>
+                <td>@item.actHolderName</td>
+                <td>@item.profession</td>
+                <td>@item.Email</td>
+                <td>@item.ContactNo</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.savingsActNo" class="btn btn-sm btn-info">Edit</a>
+                    <a asp-action="Discard" asp-route-id="@item.savingsActNo" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

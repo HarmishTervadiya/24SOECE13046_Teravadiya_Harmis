@@ -1,0 +1,30 @@
+@model IEnumerable<NetCoreWebApp_Example.Models.UserModel>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>User List</h1>
+<p><a asp-action="New" class="btn btn-primary">Create New User</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserEmail</td>
+                <td>@item.passowrd</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.UserEmail" class="btn btn-sm btn-info">Edit</a>
+                    <a asp-action="Discard" asp-route-id="@item.UserEmail" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

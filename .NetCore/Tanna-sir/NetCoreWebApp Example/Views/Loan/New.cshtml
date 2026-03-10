@@ -14,9 +14,8 @@ else if (ViewBag.Message != null)
     <div class="alert alert-danger">@ViewBag.Message</div>
 }
 
-<form asp-action="New" method="post" novalidate>
-    @Html.AntiForgeryToken()
-
+<form asp-action="New" asp-controller="LoanController" method="post">
+    
     <table class="table-borderless table" style="border:1px dotted #ccc;">
         <tr>
             <td style="width:220px;">Saving Account No :</td>

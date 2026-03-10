@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
@@ -81,6 +81,83 @@ namespace NetCoreWebApp_Example.Models
             {
                 return false;
             }
+        }
+
+        public bool Update()
+        {
+            try
+            {
+                using (var con = new SqlConnection(conString))
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE Loan SET AccountNo = @AccountNo, Amount = @Amount, LoanType = @LoanType, LoanCategory = @LoanCategory, CurrentAddress = @CurrentAddress, LoanRemarks = @LoanRemarks WHERE LoanNo = @LoanNo";
+
+                    cmd.Parameters.AddWithValue("@LoanNo", LoanNo);
+                    cmd.Parameters.AddWithValue("@AccountNo", AccountNo);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
+                    cmd.Parameters.AddWithValue("@LoanType", (object)LoanType ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@LoanCategory", (object)LoanCategory ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@CurrentAddress", (object)CurrentAddress ?? string.Empty);
+                    cmd.Parameters.AddWithValue("@LoanRemarks", (object)LoanRemarks ?? string.Empty);
+
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    return rows > 0;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Delete(int loanNo)
+        {
+            try
+            {
+                using (var con = new SqlConnection(conString))
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM Loan WHERE LoanNo = @LoanNo";
+                    cmd.Parameters.AddWithValue("@LoanNo", loanNo);
+
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    return rows > 0;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public LoanModel GetByLoanNo(int loanNo)
+        {
+            string query = "SELECT * FROM Loan WHERE LoanNo = @LoanNo";
+            using (var con = new SqlConnection(conString))
+            using (var cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@LoanNo", loanNo);
+                con.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new LoanModel
+                        {
+                            LoanNo = Convert.ToInt32(reader["LoanNo"]),
+                            AccountNo = Convert.ToInt32(reader["AccountNo"]),
+                            Amount = Convert.ToInt32(reader["Amount"]),
+                            LoanType = reader["LoanType"].ToString(),
+                            LoanCategory = reader["LoanCategory"].ToString(),
+                            CurrentAddress = reader["CurrentAddress"].ToString(),
+                            LoanRemarks = reader["LoanRemarks"].ToString()
+                        };
+                    }
+                }
+            }
+            return null;
         }
     }
 }
